@@ -95,9 +95,9 @@ while category != "location":
             knots = knots[:-1]
 
         for i in range(len(knots) - 1):
-            new_ranges.append(
-                Range(lut.translate(knots[i]), knots[i + 1] - knots[i] + 1)
-            )
+            value = lut.translate(knots[i])
+            length = knots[i + 1] - knots[i] + 1
+            new_ranges.append(Range(value, length))
 
     ranges = new_ranges
     category = lut.destination
